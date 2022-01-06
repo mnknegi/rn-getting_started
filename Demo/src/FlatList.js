@@ -6,13 +6,13 @@ const FlatListExample = () => {
     <View style={styles.container}>
       <FlatList
         data={[
-          {name: 'Spiderman', img: '../assets/spiderman'},
-          {name: 'Superman', img: '../assets/superman'},
-          {name: 'Batman', img: '../assets/batman'},
-          {name: 'Doctor Strange', img: '../assets/strange'},
-          {name: 'Venom', img: '../assets/venom'},
-          {name: 'Xman', img: '../assets/xman'},
-          {name: 'Ironman', img: '../assets/ironman'},
+          {name: 'Spiderman', img: require('../assets/spiderman.jpeg')},
+          {name: 'Superman', img: require('../assets/superman.jpg')},
+          {name: 'Batman', img: require('../assets/batman.jpg')},
+          {name: 'Doctor Strange', img: require('../assets/strange.png')},
+          {name: 'Venom', img: require('../assets/venom.jpeg')},
+          {name: 'Xman', img: require('../assets/xman.jpeg')},
+          {name: 'Ironman', img: require('../assets/ironman.png')},
         ]}
         renderItem={({item}) => (
           <View style={styles.superheroCell}>
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     paddingBottom: 34,
   },
   superheroCell: {
-    // justifyContent: 'center',
+    alignItems: 'center',
     padding: 10,
     height: 60,
     backgroundColor: 'lightgray',
@@ -42,7 +42,8 @@ const styles = StyleSheet.create({
   },
   superheroItem: {
     fontSize: 24,
-    backgroundColor: 'orange',
+    fontFamily: 'Papyrus',
+    marginStart: 10,
   },
   superheroImage: {
     width: 40,

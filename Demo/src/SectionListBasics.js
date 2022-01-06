@@ -1,10 +1,9 @@
 import React from 'react';
-import {SectionList, View, Text, StyleSheet} from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {SectionList, View, Text, StyleSheet, SafeAreaView} from 'react-native';
 
 const SectionListExample = () => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <SectionList
         sections={[
           {title: 'Animals', data: ['Cat', 'Dog', 'Tiger', 'Monkey', 'Lion']},
@@ -30,15 +29,13 @@ const SectionListExample = () => {
         )}
         keyExtractor={(item, index) => index}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 44,
-    paddingBottom: 34,
   },
   sectionHeader: {
     height: 30,

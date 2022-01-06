@@ -6,6 +6,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import FlatListExample from './src/FlatList';
 import SectionListExample from './src/SectionListBasics';
+import HomeScreen from './src/HomeScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,6 +14,11 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name="HomeScreen"
+          component={HomeScreen}
+          options={{title: 'Home Screen'}}
+        />
         <Stack.Screen
           name="FlatList"
           component={FlatListExample}

@@ -1,9 +1,16 @@
 import React from 'react';
-import {View, StyleSheet, FlatList, Text, Image} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  FlatList,
+  Text,
+  Image,
+  SafeAreaView,
+} from 'react-native';
 
 const FlatListExample = () => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <FlatList
         data={[
           {name: 'Spiderman', img: require('../assets/spiderman.jpeg')},
@@ -20,22 +27,25 @@ const FlatListExample = () => {
             <Text style={styles.superheroItem}> {item.name} </Text>
           </View>
         )}
+        ItemSeparatorComponent={itemSeparator}
       />
-    </View>
+    </SafeAreaView>
   );
+};
+
+const itemSeparator = () => {
+  return <View style={styles.itemDivider} />;
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 44,
-    paddingBottom: 34,
   },
   superheroCell: {
     alignItems: 'center',
     padding: 10,
     height: 60,
-    backgroundColor: 'lightgray',
+    backgroundColor: 'rgba(245,245,245,1.0)',
     borderColor: 'gray',
     borderBottomWidth: 0.3,
     flexDirection: 'row',
@@ -50,7 +60,10 @@ const styles = StyleSheet.create({
     height: 40,
     paddingTop: 5,
     paddingBottom: 5,
-    backgroundColor: 'yellow',
+  },
+  itemDivider: {
+    height: 0.3,
+    backgroundColor: 'rgba(250,250,250,1.0)',
   },
 });
 

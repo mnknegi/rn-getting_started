@@ -1,26 +1,42 @@
 import React from 'react';
-import {View, StyleSheet, FlatList, Text, Image} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  FlatList,
+  Text,
+  Image,
+  SafeAreaView,
+} from 'react-native';
 
 const FlatListExample = () => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <FlatList
         data={[
-          {name: 'Spiderman', img: '../assets/spiderman'},
-          {name: 'Superman', img: '../assets/superman'},
-          {name: 'Batman', img: '../assets/batman'},
-          {name: 'Doctor Strange', img: '../assets/strange'},
-          {name: 'Venom', img: '../assets/venom'},
-          {name: 'Xman', img: '../assets/xman'},
-          {name: 'Ironman', img: '../assets/ironman'},
+          {name: 'Spiderman', img: require('../assets/spiderman.jpeg')},
+          {name: 'Superman', img: require('../assets/superman.jpg')},
+          {name: 'Batman', img: require('../assets/batman.jpg')},
+          {name: 'Doctor Strange', img: require('../assets/strange.png')},
+          {name: 'Venom', img: require('../assets/venom.jpeg')},
+          {name: 'Xman', img: require('../assets/xman.jpeg')},
+          {name: 'Ironman', img: require('../assets/ironman.png')},
         ]}
-        renderItem={({item}) => (
-          <View style={styles.superheroCell}>
-            <Image source={item.img} style={styles.superheroImage} />
-            <Text style={styles.superheroItem}> {item.name} </Text>
-          </View>
-        )}
+        renderItem={({item}) => <RenderItem item={item} />}
+        ItemSeparatorComponent={ItemSeparator}
       />
+    </SafeAreaView>
+  );
+};
+
+const ItemSeparator = () => {
+  return <View style={styles.itemDivider} />;
+};
+
+const RenderItem = ({item}) => {
+  return (
+    <View style={styles.superheroCell}>
+      <Image source={item.img} style={styles.superheroImage} />
+      <Text style={styles.superheroItem}> {item.name} </Text>
     </View>
   );
 };
@@ -28,28 +44,32 @@ const FlatListExample = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 44,
-    paddingBottom: 34,
   },
   superheroCell: {
-    // justifyContent: 'center',
+    alignItems: 'center',
     padding: 10,
-    height: 60,
-    backgroundColor: 'lightgray',
+    height: 100,
+    // backgroundColor: 'rgba(245,245,245,1.0)',
+    backgroundColor: 'whitesmoke',
     borderColor: 'gray',
     borderBottomWidth: 0.3,
     flexDirection: 'row',
   },
   superheroItem: {
     fontSize: 24,
-    backgroundColor: 'orange',
+    fontFamily: 'Papyrus',
+    marginStart: 10,
   },
   superheroImage: {
-    width: 40,
-    height: 40,
+    height: 80,
+    width: 80,
     paddingTop: 5,
     paddingBottom: 5,
-    backgroundColor: 'yellow',
+    borderRadius: 5,
+  },
+  itemDivider: {
+    height: 0.3,
+    backgroundColor: 'rgba(250,250,250,1.0)',
   },
 });
 

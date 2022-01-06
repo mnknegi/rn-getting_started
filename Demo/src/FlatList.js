@@ -14,7 +14,11 @@ const FlatListExample = () => {
           'Xman',
           'Iron-man',
         ]}
-        renderItem={({item}) => <Text style={styles.cellItem}> {item} </Text>}
+        renderItem={({item}) => (
+          <View style={styles.cellView}>
+            <Text style={styles.cellItem}> {item} </Text>
+          </View>
+        )}
       />
     </View>
   );
@@ -26,9 +30,14 @@ const styles = StyleSheet.create({
     paddingTop: 44,
     paddingBottom: 34,
   },
-  cellItem: {
+  cellView: {
     padding: 10,
-    height: 44,
+    height: 60,
+    backgroundColor: 'lightgray',
+    borderColor: 'gray',
+    borderBottomWidth: 0.3,
+  },
+  cellItem: {
     fontSize: 20,
   },
 });

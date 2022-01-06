@@ -3,7 +3,7 @@ import {TouchableOpacity, Text, View, StyleSheet} from 'react-native';
 
 const HomeScreenButton = props => {
   return (
-    <TouchableOpacity onPress={() => {}}>
+    <TouchableOpacity onPress={props.action}>
       <View style={styles.container}>
         <Text style={styles.buttonText}>{props.text}</Text>
       </View>

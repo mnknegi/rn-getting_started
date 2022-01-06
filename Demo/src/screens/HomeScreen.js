@@ -3,19 +3,19 @@ import {SafeAreaView, StyleSheet, View} from 'react-native';
 
 import HomeScreenButton from '../components/HomeScreenButton';
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.buttonContainer}>
         <HomeScreenButton
           action={() => {
-            alert('something');
+            navigation.navigate('FlatList');
           }}
           text="Flat List Basics"
         />
         <HomeScreenButton
           action={() => {
-            alert('something');
+            navigation.navigate('SectionList');
           }}
           text="Section List Basics"
         />

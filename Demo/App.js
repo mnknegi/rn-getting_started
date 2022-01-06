@@ -1,12 +1,12 @@
 import React from 'react';
-import {View} from 'react-native';
+import {} from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import FlatListExample from './src/screens/FlatList';
-import SectionListExample from './src/screens/SectionListBasics';
 import HomeScreen from './src/screens/HomeScreen';
+import SectionListExample from './src/screens/SectionListBasics';
+import FlatListExample from './src/screens/FlatList';
 
 const Stack = createNativeStackNavigator();
 

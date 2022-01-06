@@ -1,18 +1,22 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
 
-import HomeScreenButton from './src/components/HomeScreenButton';
+import HomeScreenButton from '../components/HomeScreenButton';
 
 const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.buttonContainer}>
         <HomeScreenButton
-          message="FlatList Button Pressed..."
+          action={() => {
+            alert('something');
+          }}
           text="Flat List Basics"
         />
         <HomeScreenButton
-          message="Section List Button Pressed..."
+          action={() => {
+            alert('something');
+          }}
           text="Section List Basics"
         />
       </View>

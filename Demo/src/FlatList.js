@@ -48,8 +48,9 @@ const styles = StyleSheet.create({
   superheroCell: {
     alignItems: 'center',
     padding: 10,
-    height: 60,
-    backgroundColor: 'rgba(245,245,245,1.0)',
+    height: 100,
+    // backgroundColor: 'rgba(245,245,245,1.0)',
+    backgroundColor: 'whitesmoke',
     borderColor: 'gray',
     borderBottomWidth: 0.3,
     flexDirection: 'row',
@@ -60,10 +61,11 @@ const styles = StyleSheet.create({
     marginStart: 10,
   },
   superheroImage: {
-    width: 40,
-    height: 40,
+    height: 80,
+    width: 80,
     paddingTop: 5,
     paddingBottom: 5,
+    borderRadius: 5,
   },
   itemDivider: {
     height: 0.3,

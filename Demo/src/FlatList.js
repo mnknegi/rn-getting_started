@@ -21,20 +21,24 @@ const FlatListExample = () => {
           {name: 'Xman', img: require('../assets/xman.jpeg')},
           {name: 'Ironman', img: require('../assets/ironman.png')},
         ]}
-        renderItem={({item}) => (
-          <View style={styles.superheroCell}>
-            <Image source={item.img} style={styles.superheroImage} />
-            <Text style={styles.superheroItem}> {item.name} </Text>
-          </View>
-        )}
-        ItemSeparatorComponent={itemSeparator}
+        renderItem={({item}) => <RenderItem item={item} />}
+        ItemSeparatorComponent={ItemSeparator}
       />
     </SafeAreaView>
   );
 };
 
-const itemSeparator = () => {
+const ItemSeparator = () => {
   return <View style={styles.itemDivider} />;
+};
+
+const RenderItem = ({item}) => {
+  return (
+    <View style={styles.superheroCell}>
+      <Image source={item.img} style={styles.superheroImage} />
+      <Text style={styles.superheroItem}> {item.name} </Text>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({

@@ -16,6 +16,11 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
+          name="HomeScreen"
+          component={HomeScreen}
+          options={{title: 'Home Screen'}}
+        />
+        <Stack.Screen
           name="ListSelectionScreen"
           component={ListSelectionScreen}
           options={{title: 'List Selection Screen'}}

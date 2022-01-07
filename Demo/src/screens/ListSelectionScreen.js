@@ -1,19 +1,19 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
 
-import HomeScreenButton from '../components/ListSelectionButton';
+import ListSelectionButton from '../components/ListSelectionButton';
 
-const HomeScreen = ({navigation}) => {
+const ListSelectionScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.buttonContainer}>
-        <HomeScreenButton
+        <ListSelectionButton
           action={() => {
             navigation.navigate('FlatList');
           }}
           text="Flat List Basics"
         />
-        <HomeScreenButton
+        <ListSelectionButton
           action={() => {
             navigation.navigate('SectionList');
           }}
@@ -37,4 +37,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;
+export default ListSelectionScreen;

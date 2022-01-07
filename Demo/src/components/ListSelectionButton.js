@@ -1,7 +1,7 @@
 import React from 'react';
 import {TouchableOpacity, Text, View, StyleSheet} from 'react-native';
 
-const HomeScreenButton = props => {
+const ListSelectionButton = props => {
   return (
     <TouchableOpacity onPress={props.action}>
       <View style={styles.container}>
@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreenButton;
+export default ListSelectionButton;

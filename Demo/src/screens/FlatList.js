@@ -8,6 +8,8 @@ import {
   SafeAreaView,
 } from 'react-native';
 
+import RenderItem from '../components/RenderItem';
+
 const FlatListExample = () => {
   return (
     <SafeAreaView style={styles.container}>
@@ -44,28 +46,22 @@ const ItemSeparator = () => {
   return <View style={styles.itemDivider} />;
 };
 
-const RenderItem = ({item}) => {
-  return (
-    <View style={styles.superheroCell}>
-      <Image source={item.img} style={styles.superheroImage} />
-      <Text style={styles.superheroItem}> {item.name} </Text>
-    </View>
-  );
-};
+/**
+ * This portion of code is shifted to RenderItem.js
+ */
+
+// const RenderItem = ({item}) => {
+//   return (
+//     <View style={styles.superheroCell}>
+//       <Image source={item.img} style={styles.superheroImage} />
+//       <Text style={styles.superheroItem}> {item.name} </Text>
+//     </View>
+//   );
+// };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  superheroCell: {
-    alignItems: 'center',
-    padding: 10,
-    height: 100,
-    // backgroundColor: 'rgba(245,245,245,1.0)',
-    backgroundColor: 'whitesmoke',
-    borderColor: 'gray',
-    borderBottomWidth: 0.3,
-    flexDirection: 'row',
   },
   superheroItem: {
     fontSize: 24,

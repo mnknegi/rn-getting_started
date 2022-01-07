@@ -1,5 +1,6 @@
 import React from 'react';
 import {SectionList, View, Text, StyleSheet, SafeAreaView} from 'react-native';
+import RenderItem from '../components/RenderItem';
 
 import SectionHeader from '../components/SectionHeader';
 
@@ -19,11 +20,7 @@ const SectionListExample = () => {
           },
           {title: 'Fruits', data: ['Banana', 'Apple', 'Grapes', 'Water Melon']},
         ]}
-        renderItem={({item}) => (
-          <View style={styles.itemView}>
-            <Text style={styles.cellItem}> {item} </Text>
-          </View>
-        )}
+        renderItem={({item}) => <RenderItem item={item} />}
         renderSectionHeader={({section}) => <SectionHeader section={section} />}
         keyExtractor={(item, index) => index}
       />

@@ -13,13 +13,13 @@ const FlatListExample = () => {
     <SafeAreaView style={styles.container}>
       <FlatList
         data={[
-          {name: 'Spiderman', img: require('../assets/spiderman.jpeg')},
-          {name: 'Superman', img: require('../assets/superman.jpg')},
-          {name: 'Batman', img: require('../assets/batman.jpg')},
-          {name: 'Doctor Strange', img: require('../assets/strange.png')},
-          {name: 'Venom', img: require('../assets/venom.jpeg')},
-          {name: 'Xman', img: require('../assets/xman.jpeg')},
-          {name: 'Ironman', img: require('../assets/ironman.png')},
+          {name: 'Spiderman', img: require('../../assets/spiderman.jpeg')},
+          {name: 'Superman', img: require('../../assets/superman.jpg')},
+          {name: 'Batman', img: require('../../assets/batman.jpg')},
+          {name: 'Doctor Strange', img: require('../../assets/strange.png')},
+          {name: 'Venom', img: require('../../assets/venom.jpeg')},
+          {name: 'Xman', img: require('../../assets/xman.jpeg')},
+          {name: 'Ironman', img: require('../../assets/ironman.png')},
         ]}
         renderItem={({item}) => <RenderItem item={item} />}
         ItemSeparatorComponent={ItemSeparator}

@@ -32,17 +32,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  itemView: {
-    height: 60,
-    backgroundColor: 'smokewhite',
-    borderColor: 'gray',
-    borderBottomWidth: 0.3,
-    justifyContent: 'center',
-  },
-  cellItem: {
-    fontSize: 22,
-    fontFamily: 'Optima',
-  },
   superheroImage: {
     width: 40,
     height: 40,

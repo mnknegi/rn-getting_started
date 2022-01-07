@@ -7,6 +7,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './src/screens/HomeScreen';
 import SectionListExample from './src/screens/SectionListBasics';
 import FlatListExample from './src/screens/FlatList';
+import ListSelectionScreen from './src/screens/ListSelectionScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,9 +16,9 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="HomeScreen"
-          component={HomeScreen}
-          options={{title: 'Home Screen'}}
+          name="ListSelectionScreen"
+          component={ListSelectionScreen}
+          options={{title: 'List Selection Screen'}}
         />
         <Stack.Screen
           name="FlatList"

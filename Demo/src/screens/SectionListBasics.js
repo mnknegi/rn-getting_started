@@ -1,6 +1,8 @@
 import React from 'react';
 import {SectionList, View, Text, StyleSheet, SafeAreaView} from 'react-native';
 
+import SectionHeader from '../components/SectionHeader';
+
 const SectionListExample = () => {
   return (
     <SafeAreaView style={styles.container}>
@@ -22,11 +24,7 @@ const SectionListExample = () => {
             <Text style={styles.cellItem}> {item} </Text>
           </View>
         )}
-        renderSectionHeader={({section}) => (
-          <View style={styles.sectionHeader}>
-            <Text style={styles.sectionHeaderTitle}> {section.title} </Text>
-          </View>
-        )}
+        renderSectionHeader={({section}) => <SectionHeader section={section} />}
         keyExtractor={(item, index) => index}
       />
     </SafeAreaView>
@@ -37,22 +35,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  sectionHeader: {
-    height: 30,
-    backgroundColor: 'gray',
-    justifyContent: 'center',
-  },
-  sectionHeaderTitle: {
-    fontSize: 16,
-    fontFamily: 'Helvetica-Bold',
-  },
   itemView: {
-    // justifyContent: 'center',
     height: 60,
-    backgroundColor: 'lightgray',
+    backgroundColor: 'smokewhite',
     borderColor: 'gray',
     borderBottomWidth: 0.3,
-    // flexDirection: 'row',
     justifyContent: 'center',
   },
   cellItem: {

@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import RenderItem from '../components/RenderItem';
+import ItemSeparator from '../components/ItemSeparator';
 
 const FlatListExample = () => {
   return (
@@ -36,14 +37,10 @@ const FlatListExample = () => {
           },
         ]}
         renderItem={({item}) => <RenderItem item={item} />}
-        ItemSeparatorComponent={ItemSeparator}
+        ItemSeparatorComponent={() => <ItemSeparator />}
       />
     </SafeAreaView>
   );
-};
-
-const ItemSeparator = () => {
-  return <View style={styles.itemDivider} />;
 };
 
 /**
@@ -77,7 +74,7 @@ const styles = StyleSheet.create({
   },
   itemDivider: {
     height: 0.3,
-    backgroundColor: 'rgba(250,250,250,1.0)',
+    backgroundColor: 'rgba(111,111,111,1.0)',
   },
 });
 

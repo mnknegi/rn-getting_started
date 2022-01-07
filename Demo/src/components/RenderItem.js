@@ -14,8 +14,6 @@ const styles = StyleSheet.create({
   itemView: {
     height: 120,
     backgroundColor: 'smokewhite',
-    borderColor: 'gray',
-    borderBottomWidth: 0.3,
     flexDirection: 'row',
   },
   cellItem: {

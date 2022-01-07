@@ -1,6 +1,8 @@
 import React from 'react';
 import {FlatList, SafeAreaView, StyleSheet, Text, View} from 'react-native';
 
+import ItemSeparator from '../components/ItemSeparator';
+
 const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
@@ -15,14 +17,10 @@ const HomeScreen = () => {
             <Text style={styles.cellItem}>{item.name}</Text>
           </View>
         )}
-        ItemSeparatorComponent={ItemSeparator}
+        ItemSeparatorComponent={() => <ItemSeparator />}
       />
     </SafeAreaView>
   );
-};
-
-const ItemSeparator = () => {
-  return <View style={styles.itemDivider} />;
 };
 
 const styles = StyleSheet.create({
@@ -41,10 +39,6 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontFamily: 'Optima',
     color: 'darkslateblue',
-  },
-  itemDivider: {
-    height: 0.3,
-    backgroundColor: 'rgba(250,250,250,1.0)',
   },
 });
 

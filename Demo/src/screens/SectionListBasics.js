@@ -3,6 +3,7 @@ import {SectionList, View, Text, StyleSheet, SafeAreaView} from 'react-native';
 import RenderItem from '../components/RenderItem';
 
 import SectionHeader from '../components/SectionHeader';
+import ItemSeparator from '../components/ItemSeparator';
 
 const SectionListExample = () => {
   return (
@@ -92,6 +93,7 @@ const SectionListExample = () => {
         ]}
         renderItem={({item}) => <RenderItem item={item} />}
         renderSectionHeader={({section}) => <SectionHeader section={section} />}
+        ItemSeparatorComponent={() => <ItemSeparator />}
         keyExtractor={(item, index) => index}
       />
     </SafeAreaView>

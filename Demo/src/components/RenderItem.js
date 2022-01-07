@@ -5,7 +5,7 @@ const RenderItem = props => {
   return (
     <View style={styles.itemView}>
       <Image source={props.item.img} style={styles.cellImage} />
-      <Text style={styles.cellItem}> {props.item.item} </Text>
+      <Text style={styles.cellItem}> {props.item.name} </Text>
     </View>
   );
 };

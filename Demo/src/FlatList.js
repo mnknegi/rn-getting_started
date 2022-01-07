@@ -6,13 +6,19 @@ const FlatListExample = () => {
     <View style={styles.container}>
       <FlatList
         data={[
-          {name: 'Spiderman', img: '../assets/spiderman'},
-          {name: 'Superman', img: '../assets/superman'},
-          {name: 'Batman', img: '../assets/batman'},
-          {name: 'Doctor Strange', img: '../assets/strange'},
-          {name: 'Venom', img: '../assets/venom'},
-          {name: 'Xman', img: '../assets/xman'},
-          {name: 'Ironman', img: '../assets/ironman'},
+          {
+            name: 'Spiderman',
+            img: require('../assets/superheros/spiderman.jpeg'),
+          },
+          {name: 'Superman', img: require('../assets/superheros/superman.jpg')},
+          {name: 'Batman', img: require('../assets/superheros/batman.jpg')},
+          {
+            name: 'Doctor Strange',
+            img: require('../assets/superheros/strange.png'),
+          },
+          {name: 'Venom', img: require('../assets/superheros/venom.jpeg')},
+          {name: 'Xman', img: require('../assets/superheros/xman.jpeg')},
+          {name: 'Ironman', img: require('../assets/superheros/ironman.png')},
         ]}
         renderItem={({item}) => (
           <View style={styles.superheroCell}>

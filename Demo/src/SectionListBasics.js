@@ -1,6 +1,5 @@
 import React from 'react';
 import {SectionList, View, Text, StyleSheet} from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 const SectionListExample = () => {
   return (

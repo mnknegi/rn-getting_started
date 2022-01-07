@@ -49,12 +49,10 @@ const styles = StyleSheet.create({
     fontFamily: 'Helvetica-Bold',
   },
   itemView: {
-    // justifyContent: 'center',
     height: 60,
     backgroundColor: 'lightgray',
     borderColor: 'gray',
     borderBottomWidth: 0.3,
-    // flexDirection: 'row',
     justifyContent: 'center',
   },
   cellItem: {

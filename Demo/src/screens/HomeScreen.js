@@ -1,21 +1,38 @@
 import React from 'react';
-import {FlatList, SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import {
+  FlatList,
+  Image,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
 import ItemSeparator from '../components/ItemSeparator';
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
         data={[
-          {name: 'List Selection Basics'},
-          {name: 'Networking'},
-          {name: 'Future Topics'},
+          {name: 'List Selection Basics', route: 'ListSelectionScreen'},
+          {name: 'Networking', route: ''},
+          {name: 'Future Topics', route: ''},
         ]}
         renderItem={({item}) => (
-          <View style={styles.itemView}>
-            <Text style={styles.cellItem}>{item.name}</Text>
-          </View>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate(item.route);
+            }}>
+            <View style={styles.itemView}>
+              <Text style={styles.cellItem}>{item.name}</Text>
+              <Image
+                source={require('../../assets/misc/arrow.png')}
+                style={styles.detailIcon}
+              />
+            </View>
+          </TouchableOpacity>
         )}
         ItemSeparatorComponent={() => <ItemSeparator />}
       />
@@ -30,15 +47,19 @@ const styles = StyleSheet.create({
   itemView: {
     height: 80,
     backgroundColor: 'smokewhite',
-    borderColor: 'gray',
-    borderBottomWidth: 0.3,
-    justifyContent: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
+    margin: 20,
   },
   cellItem: {
     fontSize: 22,
     fontFamily: 'Optima',
     color: 'darkslateblue',
+  },
+  detailIcon: {
+    width: 10,
+    height: 10,
   },
 });
 

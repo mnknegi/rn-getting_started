@@ -17,7 +17,7 @@ const HomeScreen = ({navigation}) => {
       <FlatList
         data={[
           {name: 'List Selection Basics', route: 'ListSelectionScreen'},
-          {name: 'Networking', route: ''},
+          {name: 'Networking', route: 'UsersList'},
           {name: 'Future Topics', route: ''},
         ]}
         renderItem={({item}) => (

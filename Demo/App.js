@@ -8,6 +8,7 @@ import HomeScreen from './src/screens/HomeScreen';
 import SectionListExample from './src/screens/SectionListBasics';
 import FlatListExample from './src/screens/FlatList';
 import ListSelectionScreen from './src/screens/ListSelectionScreen';
+import UsersList from './src/screens/ListUsers';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,11 @@ const App = () => {
           name="ListSelectionScreen"
           component={ListSelectionScreen}
           options={{title: 'List Selection Screen'}}
+        />
+        <Stack.Screen
+          name="UsersList"
+          component={UsersList}
+          options={{title: 'List of Users'}}
         />
         <Stack.Screen
           name="FlatList"

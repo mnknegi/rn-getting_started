@@ -35,7 +35,9 @@ const App = () => {
         <Stack.Screen
           name="UserDetails"
           component={UserDetails}
-          options={{title: 'User Details'}}
+          options={({route}) => ({
+            title: route.params.first_name + ' ' + route.params.last_name,
+          })}
         />
         <Stack.Screen
           name="FlatList"

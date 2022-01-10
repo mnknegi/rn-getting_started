@@ -1,5 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {FlatList, SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import {
+  ActivityIndicator,
+  FlatList,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import ItemSeparator from '../components/ItemSeparator';
 
 const UsersList = () => {
@@ -17,7 +24,13 @@ const UsersList = () => {
   return (
     <SafeAreaView style={styles.container}>
       {isLoading ? (
-        <Text>Loading...</Text>
+        <View>
+          <ActivityIndicator
+            animating={isLoading}
+            style={styles.indicatorItem}
+          />
+          <Text style={styles.loadingText}>Loading...</Text>
+        </View>
       ) : (
         <FlatList
           data={data.data}
@@ -51,6 +64,14 @@ const styles = StyleSheet.create({
     margin: 10,
     fontFamily: 'Optima',
     alignSelf: 'center',
+  },
+  loadingText: {
+    fontSize: 22,
+    fontFamily: 'Optima',
+    alignSelf: 'center',
+  },
+  indicatorItem: {
+    paddingBottom: 10,
   },
 });
 

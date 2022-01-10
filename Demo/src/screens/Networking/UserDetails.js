@@ -9,25 +9,26 @@ const UserDetails = ({navigation, route}) => {
           source={{uri: route.params.avatar}}
           style={styles.imageContainer}
         />
-        <View style={styles.itemContainer}>
-          <Text style={styles.labelFormat}>First Name:</Text>
-          <Text style={styles.descriptionFormat}>
-            {route.params.first_name}
-          </Text>
-        </View>
-        <View style={styles.itemContainer}>
-          <Text style={styles.labelFormat}>Last Name:</Text>
-          <Text style={styles.descriptionFormat}>
-            {' '}
-            {route.params.last_name}
-          </Text>
-        </View>
-        <View style={styles.itemContainer}>
-          <Text style={styles.labelFormat}>Email:</Text>
-          <Text style={styles.descriptionFormat}> {route.params.email}</Text>
-        </View>
+        <DescriptionItems
+          title={'First Name: '}
+          desctiption={route.params.first_name}
+        />
+        <DescriptionItems
+          title={'Last Name: '}
+          desctiption={route.params.last_name}
+        />
+        <DescriptionItems title={'Email: '} desctiption={route.params.email} />
       </View>
     </SafeAreaView>
+  );
+};
+
+const DescriptionItems = props => {
+  return (
+    <View style={styles.itemContainer}>
+      <Text style={styles.labelFormat}>{props.title}</Text>
+      <Text style={styles.descriptionFormat}> {props.desctiption}</Text>
+    </View>
   );
 };
 

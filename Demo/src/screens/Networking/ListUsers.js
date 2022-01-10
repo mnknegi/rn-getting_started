@@ -8,7 +8,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import ItemSeparator from '../components/ItemSeparator';
+import ItemSeparator from '../../components/ItemSeparator';
 
 const UsersList = () => {
   const [isLoading, setIsLoading] = useState(true);

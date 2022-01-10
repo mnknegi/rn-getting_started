@@ -1,7 +1,7 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, View} from 'react-native';
 
-import ListSelectionButton from '../components/ListSelectionButton';
+import ListSelectionButton from '../../components/ListSelectionButton';
 
 const ListSelectionScreen = ({navigation}) => {
   return (

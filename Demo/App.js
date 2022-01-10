@@ -4,9 +4,9 @@ import {} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import HomeScreen from './src/screens/HomeScreen';
-import ListSelectionScreen from './src/screens/ListSelectionScreen';
-import UsersList from './src/screens/ListUsers';
+import HomeScreen from './src/screens/HomeScreen/HomeScreen';
+import ListSelectionScreen from './src/screens/ListSelectionBasics/ListSelectionScreen';
+import UsersList from './src/screens/Networking/ListUsers';
 import FlatListExample from './src/screens/ListSelectionBasics/FlatList';
 import SectionListExample from './src/screens/ListSelectionBasics/SectionListBasics';
 

@@ -6,11 +6,12 @@ import {
   SafeAreaView,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from 'react-native';
 import ItemSeparator from '../../components/ItemSeparator';
 
-const UsersList = () => {
+const UsersList = ({navigation}) => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState([]);
 
@@ -37,15 +38,20 @@ const UsersList = () => {
           data={data.data}
           keyExtractor={({id}, index) => id}
           renderItem={({item}) => (
-            <View style={styles.itemView}>
-              <View>
-                <Text style={styles.cellTitle}>
-                  {item.first_name + ' ' + item.last_name}
-                </Text>
-                <Text style={styles.cellSubtitle}>{item.email}</Text>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('UserDetails', item);
+              }}>
+              <View style={styles.itemView}>
+                <View>
+                  <Text style={styles.cellTitle}>
+                    {item.first_name + ' ' + item.last_name}
+                  </Text>
+                  <Text style={styles.cellSubtitle}>{item.email}</Text>
+                </View>
+                <Image source={{uri: item.avatar}} style={styles.avatarImg} />
               </View>
-              <Image source={{uri: item.avatar}} style={styles.avatarImg} />
-            </View>
+            </TouchableOpacity>
           )}
           ItemSeparatorComponent={ItemSeparator}
         />

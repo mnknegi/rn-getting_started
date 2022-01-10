@@ -4,10 +4,12 @@ import {} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import HomeScreen from './src/screens/HomeScreen';
-import SectionListExample from './src/screens/SectionListBasics';
-import FlatListExample from './src/screens/FlatList';
-import ListSelectionScreen from './src/screens/ListSelectionScreen';
+import HomeScreen from './src/screens/HomeScreen/HomeScreen';
+import ListSelectionScreen from './src/screens/ListSelectionBasics/ListSelectionScreen';
+import UsersList from './src/screens/Networking/ListUsers';
+import FlatListExample from './src/screens/ListSelectionBasics/FlatList';
+import SectionListExample from './src/screens/ListSelectionBasics/SectionListBasics';
+import UserDetails from './src/screens/Networking/UserDetails';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +26,18 @@ const App = () => {
           name="ListSelectionScreen"
           component={ListSelectionScreen}
           options={{title: 'List Selection Screen'}}
+        />
+        <Stack.Screen
+          name="UsersList"
+          component={UsersList}
+          options={{title: 'List of Users'}}
+        />
+        <Stack.Screen
+          name="UserDetails"
+          component={UserDetails}
+          options={({route}) => ({
+            title: route.params.first_name + ' ' + route.params.last_name,
+          })}
         />
         <Stack.Screen
           name="FlatList"

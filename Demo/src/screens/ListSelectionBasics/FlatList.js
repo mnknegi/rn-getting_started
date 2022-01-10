@@ -8,8 +8,8 @@ import {
   SafeAreaView,
 } from 'react-native';
 
-import RenderItem from '../components/RenderItem';
-import ItemSeparator from '../components/ItemSeparator';
+import RenderItem from '../../components/RenderItem';
+import ItemSeparator from '../../components/ItemSeparator';
 
 const FlatListExample = () => {
   return (
@@ -18,22 +18,28 @@ const FlatListExample = () => {
         data={[
           {
             name: 'Spiderman',
-            img: require('../../assets/superheros/spiderman.jpeg'),
+            img: require('../../../assets/superheros/spiderman.jpeg'),
           },
           {
             name: 'Superman',
-            img: require('../../assets/superheros/superman.jpg'),
+            img: require('../../../assets/superheros/superman.jpg'),
           },
-          {name: 'Batman', img: require('../../assets/superheros/batman.jpg')},
+          {
+            name: 'Batman',
+            img: require('../../../assets/superheros/batman.jpg'),
+          },
           {
             name: 'Doctor Strange',
-            img: require('../../assets/superheros/strange.png'),
+            img: require('../../../assets/superheros/strange.png'),
           },
-          {name: 'Venom', img: require('../../assets/superheros/venom.jpeg')},
-          {name: 'Xman', img: require('../../assets/superheros/xman.jpeg')},
+          {
+            name: 'Venom',
+            img: require('../../../assets/superheros/venom.jpeg'),
+          },
+          {name: 'Xman', img: require('../../../assets/superheros/xman.jpeg')},
           {
             name: 'Ironman',
-            img: require('../../assets/superheros/ironman.png'),
+            img: require('../../../assets/superheros/ironman.png'),
           },
         ]}
         renderItem={({item}) => <RenderItem item={item} />}

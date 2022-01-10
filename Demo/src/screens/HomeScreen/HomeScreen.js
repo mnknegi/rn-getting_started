@@ -9,7 +9,7 @@ import {
   View,
 } from 'react-native';
 
-import ItemSeparator from '../components/ItemSeparator';
+import ItemSeparator from '../../components/ItemSeparator';
 
 const HomeScreen = ({navigation}) => {
   return (
@@ -17,7 +17,7 @@ const HomeScreen = ({navigation}) => {
       <FlatList
         data={[
           {name: 'List Selection Basics', route: 'ListSelectionScreen'},
-          {name: 'Networking', route: ''},
+          {name: 'Networking', route: 'UsersList'},
           {name: 'Future Topics', route: ''},
         ]}
         renderItem={({item}) => (
@@ -28,7 +28,7 @@ const HomeScreen = ({navigation}) => {
             <View style={styles.itemView}>
               <Text style={styles.cellItem}>{item.name}</Text>
               <Image
-                source={require('../../assets/misc/arrow.png')}
+                source={require('../../../assets/misc/arrow.png')}
                 style={styles.detailIcon}
               />
             </View>

@@ -5,10 +5,10 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import HomeScreen from './src/screens/HomeScreen';
-import SectionListExample from './src/screens/SectionListBasics';
-import FlatListExample from './src/screens/FlatList';
 import ListSelectionScreen from './src/screens/ListSelectionScreen';
 import UsersList from './src/screens/ListUsers';
+import FlatListExample from './src/screens/ListSelectionBasics/FlatList';
+import SectionListExample from './src/screens/ListSelectionBasics/SectionListBasics';
 
 const Stack = createNativeStackNavigator();
 

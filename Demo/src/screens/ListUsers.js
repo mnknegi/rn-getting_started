@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {
   ActivityIndicator,
   FlatList,
+  Image,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -37,10 +38,13 @@ const UsersList = () => {
           keyExtractor={({id}, index) => id}
           renderItem={({item}) => (
             <View style={styles.itemView}>
-              <Text style={styles.cellTitle}>
-                {item.first_name + ' ' + item.last_name}
-              </Text>
-              <Text style={styles.cellSubtitle}>{item.email}</Text>
+              <View>
+                <Text style={styles.cellTitle}>
+                  {item.first_name + ' ' + item.last_name}
+                </Text>
+                <Text style={styles.cellSubtitle}>{item.email}</Text>
+              </View>
+              <Image source={{uri: item.avatar}} style={styles.avatarImg} />
             </View>
           )}
           ItemSeparatorComponent={ItemSeparator}
@@ -59,10 +63,12 @@ const styles = StyleSheet.create({
     height: 80,
     backgroundColor: 'smokewhite',
     paddingLeft: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   cellTitle: {
     fontSize: 22,
-    marginTop: 10,
     fontFamily: 'Optima-Bold',
   },
   cellSubtitle: {
@@ -76,6 +82,12 @@ const styles = StyleSheet.create({
   },
   indicatorItem: {
     paddingBottom: 10,
+  },
+  avatarImg: {
+    height: '80%',
+    aspectRatio: 1 / 1,
+    marginRight: 10,
+    borderRadius: 8,
   },
 });
 

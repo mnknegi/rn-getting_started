@@ -1,17 +1,29 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, FlatList, Text, View} from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  FlatList,
+  Text,
+  View,
+  TouchableOpacity,
+} from 'react-native';
 
 import ItemSeparator from '../../components/ItemSeparator';
 
-const CoreComponentsList = () => {
+const CoreComponentsList = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
-        data={[{id: '1', title: 'ActivityIndicator'}]}
+        data={[{id: '1', title: 'Activity Indicator'}]}
         renderItem={({item}) => (
-          <View style={styles.itemCell}>
-            <Text style={styles.textFormatting}>{item.title}</Text>
-          </View>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('ComponentDisplay', item);
+            }}>
+            <View style={styles.itemCell}>
+              <Text style={styles.textFormatting}>{item.title}</Text>
+            </View>
+          </TouchableOpacity>
         )}
         ItemSeparatorComponent={ItemSeparator}
         keyExtractor={({id}, index) => index}

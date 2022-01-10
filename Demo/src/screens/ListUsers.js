@@ -37,9 +37,10 @@ const UsersList = () => {
           keyExtractor={({id}, index) => id}
           renderItem={({item}) => (
             <View style={styles.itemView}>
-              <Text style={styles.cellItem}>
-                {item.id + '. ' + item.first_name + ' ' + item.last_name}
+              <Text style={styles.cellTitle}>
+                {item.first_name + ' ' + item.last_name}
               </Text>
+              <Text style={styles.cellSubtitle}>{item.email}</Text>
             </View>
           )}
           ItemSeparatorComponent={ItemSeparator}
@@ -57,13 +58,16 @@ const styles = StyleSheet.create({
   itemView: {
     height: 80,
     backgroundColor: 'smokewhite',
-    flexDirection: 'row',
+    paddingLeft: 10,
   },
-  cellItem: {
+  cellTitle: {
     fontSize: 22,
-    margin: 10,
+    marginTop: 10,
+    fontFamily: 'Optima-Bold',
+  },
+  cellSubtitle: {
+    fontSize: 18,
     fontFamily: 'Optima',
-    alignSelf: 'center',
   },
   loadingText: {
     fontSize: 22,

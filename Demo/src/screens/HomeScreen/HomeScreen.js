@@ -17,8 +17,8 @@ const HomeScreen = ({navigation}) => {
       <FlatList
         data={[
           {name: 'List Selection Basics', route: 'ListSelectionScreen'},
-          {name: 'Networking', route: 'UsersList'},
-          {name: 'Future Topics', route: ''},
+          {name: 'Networking Basics', route: 'UsersList'},
+          {name: 'Core Components Basics', route: 'ComponentsList'},
         ]}
         renderItem={({item}) => (
           <TouchableOpacity

@@ -10,6 +10,7 @@ import UsersList from './src/screens/Networking/ListUsers';
 import FlatListExample from './src/screens/ListSelectionBasics/FlatList';
 import SectionListExample from './src/screens/ListSelectionBasics/SectionListBasics';
 import UserDetails from './src/screens/Networking/UserDetails';
+import CoreComponentsList from './src/screens/CoreComponents/ComponentsList';
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +32,11 @@ const App = () => {
           name="UsersList"
           component={UsersList}
           options={{title: 'List of Users'}}
+        />
+        <Stack.Screen
+          name="ComponentsList"
+          component={CoreComponentsList}
+          options={{title: 'Core Components'}}
         />
         <Stack.Screen
           name="UserDetails"
